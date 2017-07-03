@@ -1,0 +1,13 @@
+@prefix :      <https://shacly.inspirito.de/shacl-rules/build_Building/entrance-partly-accessible-by-wheelchair-shacly.ttl#> .
+@prefix build: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix shcly: <https://raw.githubusercontent.com/k00ni/shacly/master/ns.ttl#> .
+
+:EntrancePartlyAccessibleByWheelchairShapeInfo
+    rdf:type shcly:ShacleRulesInfo ;
+    dc:title "build:Building - Building has partly wheelchair suitable entrance"@en ;
+    dc:description "Describes a building, which entrance is partly accessible by wheelchairs."@en ;
+    sh:targetClass build:Building .

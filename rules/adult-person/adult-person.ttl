@@ -1,0 +1,18 @@
+@prefix :     <https://shacly.inspirito.de/shacl-rules/foaf_Person/adult-person.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# about the rules:
+# this rules describe a foaf:Person which is considered an adult.
+
+:AdultShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path foaf:age ;
+        sh:minCount 1 ;
+        sh:minInclusive "18"^^xsd:integer
+    ] .
