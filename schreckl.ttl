@@ -2,7 +2,7 @@
 @prefix dc:   <http://purl.org/dc/elements/1.1/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-:ShaclInfo dc:title "ShaclInfo describes meta information about one or more NodeShape instances."
+:ShapeInfo dc:title "ShapeInfo describes meta information about one or more NodeShape instances."
 
 :applies-for rdf:type rdf:Property ;
     dc:comment "Property of a ShaclInfo instance, which points to sh:NodeShape instances."@en .

@@ -1,18 +1,21 @@
-@prefix :     <https://shacly.inspirito.de/shacl-rules/foaf_Person/adult-person.ttl#> .
-@prefix dc:   <http://purl.org/dc/elements/1.1/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sh:   <http://www.w3.org/ns/shacl#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix :      <https://raw.githubusercontent.com/schreckl/rules/master/rules/adult-person/adult-person.ttl#> .
+@prefix dc11:  <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix srekl: <https://raw.githubusercontent.com/schreckl/rules/master/schreckl.ttl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
 # about the rules:
 # this rules describe a foaf:Person which is considered an adult.
 
 :AdultShapeInfo
-    rdf:type shcly:ShapeInfo ;
-    dc:title "foaf:Person - Adult Person"@en ;
-    dc:description "This rules describe a foaf:Person which is considered an adult."@en ;
-    sh:targetClass foaf:Person .
+    rdf:type srekl:ShapeInfo ;
+    dc11:title "foaf:Person - Adult Person"@en ;
+    dc11:description "This rules describe a foaf:Person which is considered an adult."@en ;
+    dc11:source <https://raw.githubusercontent.com/schreckl/rules/master/rules/adult-person/adult-person.ttl#> ;
+    sh:targetClass foaf:Person ;
+    srekl:applies-to :AdultShape .
 
 :AdultShape
     rdf:type sh:NodeShape ;

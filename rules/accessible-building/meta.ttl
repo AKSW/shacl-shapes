@@ -1,0 +1,20 @@
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/meta.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix dc11:        <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix srekl:       <https://raw.githubusercontent.com/schreckl/rules/master/schreckl.ttl#> .
+@prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# meta information about accessible building constraints
+
+:EntrancePartlyAccessibleByWheelchairShapeInfo
+    rdf:type srekl:ShapeInfo ;
+    dc11:title "Accessible features of a building."@en ;
+    dc11:description "Provides constraints about certain features of a building, like entrance."@en ;
+    dc11:source <https://github.com/schreckl/rules/tree/master/rules/accessible-building> ;
+    sh:targetClass build:Building ;
+    srekl:applies-to :EntranceFullyAccessibleByWheelchairShape ,
+                     :EntrancePartlyAccessibleByWheelchairShape .

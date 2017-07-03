@@ -9,12 +9,6 @@
 
 # the following constraints describe a building, which entrance is fully accessible by wheelchairs.
 
-:EntranceFullyAccessibleByWheelchairShapeInfo
-    rdf:type shcly:ShapeInfo ;
-    dc:title "build:Building - Building has wheelchair suitable entrance"@en ;
-    dc:description "Describes a building, which entrance is fully accessible by wheelchairs."@en ;
-    sh:targetClass build:Building .
-
 # based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
 # Entrance area completely accessible for wheelchairs, if:
 # - Entrance: flat (max. 3cm) or via ramp <=6% gradient
