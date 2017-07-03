@@ -1,12 +1,19 @@
-@prefix :            <https://shacly.inspirito.de/shacl-rules/build_Building/entrance-fully-accessible-by-wheelchair.ttl#> .
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/entrance-fully-accessible-by-wheelchair.ttl#> .
 @prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
 @prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
 @prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:          <http://www.w3.org/ns/shacl#> .
 @prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # the following constraints describe a building, which entrance is fully accessible by wheelchairs.
+
+:EntranceFullyAccessibleByWheelchairShapeInfo
+    rdf:type shcly:ShapeInfo ;
+    dc:title "build:Building - Building has wheelchair suitable entrance"@en ;
+    dc:description "Describes a building, which entrance is fully accessible by wheelchairs."@en ;
+    sh:targetClass build:Building .
 
 # based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
 # Entrance area completely accessible for wheelchairs, if:

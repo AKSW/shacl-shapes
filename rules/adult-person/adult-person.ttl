@@ -1,4 +1,5 @@
 @prefix :     <https://shacly.inspirito.de/shacl-rules/foaf_Person/adult-person.ttl#> .
+@prefix dc:   <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
@@ -6,6 +7,12 @@
 
 # about the rules:
 # this rules describe a foaf:Person which is considered an adult.
+
+:AdultShapeInfo
+    rdf:type shcly:ShapeInfo ;
+    dc:title "foaf:Person - Adult Person"@en ;
+    dc:description "This rules describe a foaf:Person which is considered an adult."@en ;
+    sh:targetClass foaf:Person .
 
 :AdultShape
     rdf:type sh:NodeShape ;
