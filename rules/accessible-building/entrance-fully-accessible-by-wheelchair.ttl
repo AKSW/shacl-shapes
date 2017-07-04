@@ -11,7 +11,7 @@
 
 # based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
 # Entrance area completely accessible for wheelchairs, if:
-# - Entrance: flat (max. 3cm) or via ramp <=6% gradient
+# - Entrance: flat (max. 3cm) or via ramp <= 6% gradient
 # - Door width: >= 90 cm
 
 :EntranceFullyAccessibleByWheelchairShape

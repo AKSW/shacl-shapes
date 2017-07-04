@@ -12,7 +12,7 @@
 # based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
 # Entrance area with limited accessibility for wheelchairs, if:
 # - max. 1 step or via ramp with max. 12% gradient or
-# - Door width: >=70 cm
+# - Door width: >= 70 cm
 
 :EntrancePartlyAccessibleByWheelchairShape
     rdf:type sh:NodeShape ;
