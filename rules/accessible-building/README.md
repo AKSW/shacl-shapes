@@ -4,13 +4,14 @@ These shapes describe different accessible aspects of buildings. The meta data f
 
 The following shapes are available:
 
-| Aspect of the building | Shape files           |
-|:-----------------------|:----------------------|
-| **Entrance**           | Partly accessible     |
-|                        | Fully accessible      |
-|                        |                       |
-| **Local Support**      | for visually impaired |
-|                        | for hearing impaired  |
+| Aspect of the building | Shape files                                  |
+|:-----------------------|:---------------------------------------------|
+| **Entrance**           | Partly accessible                            |
+|                        | Fully accessible                             |
+|                        |                                              |
+| **Local Support**      | special support for people with disabilities |
+|                        | for visually impaired                        |
+|                        | for hearing impaired                         |
 
 ## Entrance
 
@@ -20,13 +21,13 @@ The *entrance* describes
 * steps or ramps before the entrance door(s)
 * separate entrances (for instance, special entrances for wheelchair users)
 
-### Specification: entrance fully accessible by wheelchair users
+### Entrance is fully accessible by wheelchair users
 
 Based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). The entrance area is fully accessible for wheelchairs, if:
 * entrance ground is flat (max. 3cm) or via ramp <= 6% gradient
 * entrance door width: >= 90 cm
 
-### Specification: entrance partly accessible by wheelchair users
+### Entrance is partly accessible by wheelchair users
 
 Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). The entrance area is partly accessible for wheelchairs, if:
 * max. 1 step or via ramp with max. 12% gradient or
@@ -34,14 +35,14 @@ Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](ht
 
 ## Local Support
 
-### special support for people with disabilities
+### Special support for people with disabilities
 
 A building has special support for people with disabilities, if it has a property buildaccess:localSupport with value `"true"^^xsd:boolean`.
 
-### for hearing impaired people
+### For hearing impaired people
 
 A building has local support for hearing impaired people, if it has a property buildaccess:supportForHearingImpairedAvailable with value `"true"^^xsd:boolean`.
 
-### for visually impaired people
+### For visually impaired people
 
 A building has local support for visually impaired people, if it has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
