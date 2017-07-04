@@ -17,13 +17,13 @@ The *entrance* describes
 * steps or ramps before the entrance door(s)
 * separate entrances (for instance, special entrances for wheelchair users)
 
-### Specification: fully accessible by wheelchair users
+### Specification: entrance fully accessible by wheelchair users
 
 Based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). The entrance area is fully accessible for wheelchairs, if:
 * entrance ground is flat (max. 3cm) or via ramp <= 6% gradient
 * entrance door width: >= 90 cm
 
-### Specification: partly accessible by wheelchair users
+### Specification: entrance partly accessible by wheelchair users
 
 Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). The entrance area is partly accessible for wheelchairs, if:
 * max. 1 step or via ramp with max. 12% gradient or
