@@ -7,29 +7,18 @@
 @prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
-# the following constraints describe a building, which provides assistance for visually impaired people,
+# the following constraints describe a building, which provides assistance for hearing impaired people,
 # for instance large print, tactile signs, audio cassettes or other aids.
 
-# assistance is given, if building resource is connected to a resource via buildaccess:localSupport.
-# The referenced resource also has to have a property buildaccess:supportForVisuallyImpairedAvailable
+# assistance is given, if building resource has property buildaccess:supportForVisuallyImpairedAvailable
 # with value "true"^^xsd:boolean .
 
 :AssistanceForVisuallyImpairedPeopleShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
-    # relation between build resource and "support" resource via buildaccess:localSupport
-    sh:property [
-        sh:path buildaccess:localSupport ;
-        sh:minCount 1 ;
-        sh:node :LocalSupportShape # describes constraints about local support itself
-    ] .
-
-# describes a referenced resource which provides information about local support
-:LocalSupportShape
-    a sh:NodeShape ;
     sh:property [
         sh:path buildaccess:supportForVisuallyImpairedAvailable ;
+        sh:minCount 1 ;
         sh:datatype xsd:boolean ;
-        sh:hasValue "true"^^xsd:boolean ;
-        sh:minCount 1
+        sh:hasValue "true"^^xsd:boolean
     ] .
