@@ -1,6 +1,6 @@
 # Accessible Buildings
 
-These shapes describe different accessible aspects of buildings. The meta data file is [meta.ttl](https://github.com/schreckl/rules/blob/master/rules/accessible-building/meta.ttl). 
+These shapes describe different accessible aspects of buildings. The meta data file is [meta.ttl](https://github.com/schreckl/rules/blob/master/rules/accessible-building/meta.ttl).
 
 The following shapes are available:
 
@@ -14,7 +14,7 @@ The following shapes are available:
 
 ## Entrance
 
-The *entrance* describes 
+The *entrance* describes
 * the way from a public area to the area which belongs to the building
 * the entrance door area
 * steps or ramps before the entrance door(s)
@@ -31,3 +31,13 @@ Based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://
 Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). The entrance area is partly accessible for wheelchairs, if:
 * max. 1 step or via ramp with max. 12% gradient or
 * entrance door width: >= 70 cm
+
+## Local Support
+
+### for hearing impaired people
+
+A building has local support for hearing impaired people, if it is connected to a resource via buildaccess:localSupport and this method has a property buildaccess:supportForHearingImpairedAvailable with value `"true"^^xsd:boolean`.
+
+### for visually impaired people
+
+A building has local support for visually impaired people, if it is connected to a resource via buildaccess:localSupport and this method has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
