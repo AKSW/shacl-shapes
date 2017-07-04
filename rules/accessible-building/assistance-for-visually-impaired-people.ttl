@@ -1,4 +1,4 @@
-@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/assistance-for-visual-impaired-people.ttl#> .
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/assistance-for-visually-impaired-people.ttl#> .
 @prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
 @prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
 @prefix dc:          <http://purl.org/dc/elements/1.1/> .
@@ -8,13 +8,13 @@
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # the following constraints describe a building, which provides assistance for visually impaired people,
-# for instance induction loops, deaf-and-dump interpreters or other aids.
+# for instance large print, tactile signs, audio cassettes or other aids.
 
 # assistance is given, if building resource is connected to a resource via buildaccess:localSupport.
 # The referenced resource also has to have a property buildaccess:supportForVisuallyImpairedAvailable
 # with value "true"^^xsd:boolean .
 
-:AssistanceForVisualImpairedPeopleShape
+:AssistanceForVisuallyImpairedPeopleShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
     # relation between build resource and "support" resource via buildaccess:localSupport

@@ -11,10 +11,10 @@
 # for instance induction loops, deaf-and-dump interpreters or other aids.
 
 # assistance is given, if building resource is connected to a resource via buildaccess:localSupport.
-# The referenced resource also has to have a property buildaccess:supportForVisualImpairedAvailable
+# The referenced resource also has to have a property buildaccess:supportForHearingImpairedAvailable
 # with value "true"^^xsd:boolean .
 
-:AssistanceForVisualImpairedPeopleShape
+:AssistanceForHearingImpairedPeopleShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
     # relation between build resource and "support" resource via buildaccess:localSupport
@@ -28,7 +28,7 @@
 :LocalSupportShape
     a sh:NodeShape ;
     sh:property [
-        sh:path buildaccess:supportForVisualImpairedAvailable ;
+        sh:path buildaccess:supportForHearingImpairedAvailable ;
         sh:datatype xsd:boolean ;
         sh:hasValue "true"^^xsd:boolean ;
         sh:minCount 1
