@@ -34,6 +34,10 @@ Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](ht
 
 ## Local Support
 
+### special support for people with disabilities
+
+A building has special support for people with disabilities, if it has a property buildaccess:localSupport with value `"true"^^xsd:boolean`.
+
 ### for hearing impaired people
 
 A building has local support for hearing impaired people, if it is connected to a resource via buildaccess:localSupport and this method has a property buildaccess:supportForHearingImpairedAvailable with value `"true"^^xsd:boolean`.
