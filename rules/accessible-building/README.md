@@ -40,8 +40,8 @@ A building has special support for people with disabilities, if it has a propert
 
 ### for hearing impaired people
 
-A building has local support for hearing impaired people, if it is connected to a resource via buildaccess:localSupport and this method has a property buildaccess:supportForHearingImpairedAvailable with value `"true"^^xsd:boolean`.
+A building has local support for hearing impaired people, if it has a property buildaccess:supportForHearingImpairedAvailable with value `"true"^^xsd:boolean`.
 
 ### for visually impaired people
 
-A building has local support for visually impaired people, if it is connected to a resource via buildaccess:localSupport and this method has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
+A building has local support for visually impaired people, if it has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
