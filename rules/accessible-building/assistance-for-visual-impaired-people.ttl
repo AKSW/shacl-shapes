@@ -1,0 +1,35 @@
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/assistance-for-visual-impaired-people.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# the following constraints describe a building, which provides assistance for visual impaired people,
+# for instance induction loops, deaf-and-dump interpreters or other aids.
+
+# assistance is given, if building resource is connected to a resource via buildaccess:localSupport.
+# The referenced resource also has to have a property buildaccess:supportForVisualImpairedAvailable
+# with value "true"^^xsd:boolean .
+
+:AssistanceForVisualImpairedPeopleShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:Building ;
+    # relation between build resource and "support" resource via buildaccess:localSupport
+    sh:property [
+        sh:path buildaccess:localSupport ;
+        sh:minCount 1 ;
+        sh:node :LocalSupportShape # describes constraints about local support itself
+    ] .
+
+# describes a referenced resource which provides information about local support
+:LocalSupportShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path buildaccess:supportForVisualImpairedAvailable ;
+        sh:datatype xsd:boolean ;
+        sh:hasValue "true"^^xsd:boolean ;
+        sh:minCount 1
+    ] .
