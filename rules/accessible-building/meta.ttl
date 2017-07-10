@@ -1,4 +1,5 @@
 @prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/meta.ttl#> .
+@prefix shapes:      <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/> .
 @prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
 @prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
 @prefix dc11:        <http://purl.org/dc/elements/1.1/> .
@@ -12,12 +13,11 @@
 
 :EntrancePartlyAccessibleByWheelchairShapeInfo
     rdf:type srekl:ShapeInfo ;
-    dc11:title "Accessible features of a building."@en ;
-    dc11:description "Provides constraints about certain features of a building, like entrance."@en ;
-    dc11:source <https://github.com/schreckl/rules/tree/master/rules/accessible-building> ;
-    sh:targetClass build:Building ;
-    srekl:applies-to
-                     <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/assistance-for-hearing-impaired-people.ttl#AssistanceForHearingImpairedPeopleShape> ,
-                     <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/assistance-for-visually-impaired-people.ttl#AssistanceForVisuallyImpairedPeopleShape> ,
-                     <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/entrance-fully-accessible-by-wheelchair.ttl#EntranceFullyAccessibleByWheelchairShape> ,
-                     <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/entrance-partly-accessible-by-wheelchair.ttl#EntrancePartlyAccessibleByWheelchairShape> .
+    dc11:title "Accessible features of a building." ;
+    dc11:description "Provides constraints about certain features of a building, like entrance." ;
+    dc11:creator <https://github.com/k00ni> ;
+    srekl:shacl-file shapes:assistance-for-hearing-impaired-people.ttl ,
+                     shapes:assistance-for-visually-impaired-people.ttl ,
+                     shapes:entrance-fully-accessible-by-wheelchair.ttl ,
+                     shapes:entrance-partly-accessible-by-wheelchair.ttl ,
+                     shapes:special-assistance-for-people.ttl .
