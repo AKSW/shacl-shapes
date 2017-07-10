@@ -11,11 +11,10 @@
 
 :AdultShapeInfo
     rdf:type srekl:ShapeInfo ;
-    dc11:title "foaf:Person - Adult Person"@en ;
-    dc11:description "This rules describe a foaf:Person which is considered an adult."@en ;
-    dc11:source <https://raw.githubusercontent.com/schreckl/rules/master/rules/adult-person/adult-person.ttl#> ;
-    sh:targetClass foaf:Person ;
-    srekl:applies-to :AdultShape .
+    dc11:title "Defines an adult person (foaf:Person)" ;
+    dc11:description "This rule describes a foaf:Person, which is considered an adult." ;
+    dc11:creator <https://github.com/k00ni> ;
+    srekl:shacl-file <https://raw.githubusercontent.com/schreckl/rules/master/rules/adult-person/adult-person.ttl#> .
 
 :AdultShape
     rdf:type sh:NodeShape ;
