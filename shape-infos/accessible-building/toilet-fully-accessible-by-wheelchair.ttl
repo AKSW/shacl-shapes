@@ -1,19 +1,19 @@
-@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/toilet-partly-accessible-by-wheelchair.ttl#> .
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/toilet-fully-accessible-by-wheelchair.ttl#> .
 @prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
 @prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
 @prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:          <http://www.w3.org/ns/shacl#> .
 @prefix wa: 	     <http://semweb.mmlab.be/ns/wa#> .
 
-# the following constraints describe a building, which has a toilet which is partly accessible by wheelchairs.
+# the following constraints describe a building, which has a toilet which is fully accessible by wheelchairs.
 
-# a toilet is partly accessible by wheelchairs, if:
+# a toilet is fully accessible by wheelchairs, if:
 # - door width: >= 90 cm
 # - available space left or right of WC: >= 90 cm
 # - available space in front of the WC (width + length): >= 150 cm x 150 cm
 # - left and right support handle is foldable
 
-:ToiletPartlyAccessibleByWheelchairShape
+:ToiletFullyAccessibleByWheelchairShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
     # relation between building resource and "toilet" resource via build:toilet
