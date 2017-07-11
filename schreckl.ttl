@@ -8,5 +8,5 @@
 
 :ShapeInfo dc:title "ShapeInfo describes meta information about one or more NodeShape instances."
 
-:applies-for rdf:type rdf:Property ;
-    dc:comment "Property of a ShaclInfo instance, which points to sh:NodeShape instances."@en .
+:shacl-file rdf:type rdf:Property ;
+    dc:comment "Relation to files containing SHACL information."@en .
