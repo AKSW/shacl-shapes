@@ -3,13 +3,23 @@
 @prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:          <http://www.w3.org/ns/shacl#> .
 
-# the following constraints describe a building, which has a lift which is partly accessible by wheelchairs.
+# the following constraints describe a building, which has an elevator which is partly accessible by wheelchairs.
 
-# a lift is partly accessible by wheelchairs, if the field suitableForWheelchairs is set to "partly" 
+# elevator is partly accessible by wheelchairs, if the field suitableForWheelchairs is set to "partly"
 
-:LiftPartlyAccessibleByWheelchairShape
+:ElevatorPartlyAccessibleByWheelchairShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
+    # relation between building resource and "elevator" resource via build:elevator
+    sh:property [
+        sh:path buildaccess:elevator ;
+        sh:minCount 1 ;
+        sh:node :ElevatorShape
+    ] .
+
+# describes a referenced resource with information about an elevator
+:ElevatorShape
+    a sh:NodeShape ;
     sh:property [
         rdf:type sh:PropertyShape ;
         sh:path buildaccess:suitableForWheelchairs ;
