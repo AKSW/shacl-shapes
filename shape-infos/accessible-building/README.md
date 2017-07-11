@@ -4,10 +4,12 @@ These shapes describe different accessible aspects of buildings. The meta data f
 
 The following shapes are available:
 
-| Aspect of the building | Shape files                                  |
+| Aspect of the building | Types                                        |
 |:-----------------------|:---------------------------------------------|
 | **Entrance**           | Partly accessible                            |
 |                        | Fully accessible                             |
+|                        |                                              |
+| **Lift**               | Partly accessible                            |
 |                        |                                              |
 | **Local Support**      | special support for people with disabilities |
 |                        | for visually impaired                        |
