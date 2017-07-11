@@ -9,11 +9,14 @@ The following shapes are available:
 | **Entrance**           | Partly accessible                            |
 |                        | Fully accessible                             |
 |                        |                                              |
-| **Lift**               | Partly accessible                            |
+| **Elevator**           | Partly accessible                            |
 |                        |                                              |
 | **Local Support**      | special support for people with disabilities |
 |                        | for visually impaired                        |
 |                        | for hearing impaired                         |
+|                        |                                              |
+| **Toilet**             | Partly accessible                            |
+|                        | Fully accessible                             |
 
 ## Entrance
 
@@ -35,6 +38,10 @@ Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](ht
 * max. 1 step or via ramp with max. 12% gradient or
 * entrance door width: >= 70 cm
 
+## Elevator
+
+Elevator is partly accessible by wheelchairs, if the field build:suitableForWheelchairs is set to "partly". It is aggregated 
+
 ## Local Support
 
 ### Special support for people with disabilities
@@ -48,3 +55,21 @@ A building has local support for hearing impaired people, if it has a property b
 ### For visually impaired people
 
 A building has local support for visually impaired people, if it has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
+
+## Toilet
+
+### Toilet is fully accessible for wheelchair users
+
+Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). A toilet is fully accessible by wheelchairs, if:
+* door width: >= 90 cm
+* available space left or right of WC: >= 90 cm
+* available space in front of the WC (width + length): >= 150 cm x 150 cm
+* left and right support handle is foldable
+
+### Toilet is partly accessible for wheelchair users
+
+Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](http://www.le-online.de/zeichenengl.htm). A toilet is partly accessible by wheelchairs, if:
+* door width: >= 70 cm
+* available space left or right of WC: >= 70 cm
+* available space in front of the WC (width + length): >= 100 cm x 100 cm
+* at least left or right support handle is foldable
