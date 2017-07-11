@@ -1,0 +1,81 @@
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/toilet-partly-accessible-by-wheelchair.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix wa: 	     <http://semweb.mmlab.be/ns/wa#> .
+
+# the following constraints describe a building, which has a toilet which is partly accessible by wheelchairs.
+
+# a toilet is partly accessible by wheelchairs, if:
+# - door width: >= 70 cm
+# - available space left or right of WC: >= 70 cm
+# - available space in front of the WC (width + length): >= 100 cm x 100 cm
+# - at least left or right support handle is foldable
+
+:ToiletPartlyAccessibleByWheelchairShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:Building ;
+    # relation between building resource and "toilet" resource via build:toilet
+    sh:property [
+        sh:path build:toilet ;
+        sh:minCount 1 ;
+        sh:node :ToiletShape
+    ] .
+
+# describes a referenced resource with information about a toilet
+:ToiletShape
+    a sh:NodeShape ;
+    # - door width: >= 70 cm
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path wa:toiletDoorWidth ;
+        sh:minCount 1 ;
+        sh:minInclusive "70"
+    ] ;
+
+    # - available space left or right of WC: >= 70 cm
+    sh:or (
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:areaLeftOfWCWidthCm ;
+            sh:minCount 1 ;
+            sh:minInclusive "70"
+        ]
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:areaRightOfWCWidthCm ;
+            sh:minCount 1 ;
+            sh:minInclusive "70"
+        ]
+    ) ;
+    # - available space in front of the WC (width + length): >= 100 cm x 100 cm
+    sh:and (
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:areaInFrontOfWCDepthCm ;
+            sh:minCount 1 ;
+            sh:minInclusive "100"
+        ]
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:areaInFrontOfWCWidthCm ;
+            sh:minCount 1 ;
+            sh:minInclusive "100"
+        ]
+    ) ;
+    # at least left or right support handle is foldable
+    sh:or (
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:leftSupportHandleIsFoldable ;
+            sh:minCount 1 ;
+            sh:hasValue "true"
+        ]
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path build:rightSupportHandleIsFoldable ;
+            sh:minCount 1 ;
+            sh:hasValue "true"
+        ]
+    ) .
