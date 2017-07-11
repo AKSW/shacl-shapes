@@ -1,6 +1,6 @@
 # SHACL shape repository
 
-This repository provides SHACL shapes and shape groups. Its purpose is to be a place for collaboration to work on SHACL content together. Data of this repository fuels the Schreckl [discovery service](https://schreckl.inspirito.de/) for SHACL shapes and groups.
+This repository provides SHACL shapes and shape groups. Its purpose is to be a place for collaboration to work on SHACL content together.
 
 ## Contributions welcome!
 
