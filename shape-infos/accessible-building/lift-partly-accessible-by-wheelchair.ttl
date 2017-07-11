@@ -1,0 +1,18 @@
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/lift-partly-accessible-by-wheelchair.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+
+# the following constraints describe a building, which has a lift which is partly accessible by wheelchairs.
+
+# a lift is partly accessible by wheelchairs, if the field suitableForWheelchairs is set to "partly" 
+
+:LiftPartlyAccessibleByWheelchairShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:Building ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path buildaccess:suitableForWheelchairs ;
+        sh:minCount 1 ;
+        sh:hasValue "partly"
+    ] .
