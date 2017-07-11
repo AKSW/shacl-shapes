@@ -17,6 +17,15 @@
 :EntrancePartlyAccessibleByWheelchairShape
     rdf:type sh:NodeShape ;
     sh:targetClass build:Building ;
+    # relation between building resource and "entrance" resource via build:entrance
+    sh:property [
+        sh:path build:toilet ;
+        sh:minCount 1 ;
+        sh:node :EntranceShape
+    ] .
+
+:EntranceShape
+    a sh:NodeShape ;
     # entrance door width needs to be equal or broader than 70 cm
     sh:property [
         rdf:type sh:PropertyShape ;
