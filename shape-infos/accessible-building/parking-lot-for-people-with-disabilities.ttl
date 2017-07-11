@@ -1,0 +1,34 @@
+@prefix :            <https://raw.githubusercontent.com/schreckl/rules/master/rules/accessible-building/parking-lot-for-people-with-disabilities.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/building-accessibility/ontology.ttl#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# the following constraints describe a building, which has parkinglots for people with disabilities.
+
+# a building "has" such parkinglots if it has either:
+# - parkinglots for people with disabilities in front of the building or
+# - parkinglots for people with disabilities on site
+
+:ParkinglotForPeopleWithDisabilitiesShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:Building ;
+    sh:or (
+        # parkinglots for people with disabilities in front of the building
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path buildaccess:numberOfSlotsDisabledParkingLotInFrontOfPlace ;
+            sh:minCount 1 ;
+            sh:minInclusive "1"^^xsd:integer
+        ]
+        # parkinglots for people with disabilities on site
+        sh:property [
+            rdf:type sh:PropertyShape ;
+            sh:path buildaccess:numberOfSlotsDisabledParkingLotOnSite ;
+            sh:minCount 1 ;
+            sh:minInclusive "1"^^xsd:integer
+        ]
+    ) .

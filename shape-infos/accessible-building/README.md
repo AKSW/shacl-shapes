@@ -15,6 +15,8 @@ The following shapes are available:
 |                        | for visually impaired                        |
 |                        | for hearing impaired                         |
 |                        |                                              |
+| **Parking Lot**        | Lots in front of the building or on site     |
+|                        |                                              |
 | **Toilet**             | Partly accessible                            |
 |                        | Fully accessible                             |
 
@@ -40,7 +42,7 @@ Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](ht
 
 ## Elevator
 
-Elevator is partly accessible by wheelchairs, if the field build:suitableForWheelchairs is set to "partly". It is aggregated 
+Elevator is partly accessible by wheelchairs, if the field build:suitableForWheelchairs is set to "partly". It is aggregated
 
 ## Local Support
 
@@ -55,6 +57,12 @@ A building has local support for hearing impaired people, if it has a property b
 ### For visually impaired people
 
 A building has local support for visually impaired people, if it has a property buildaccess:supportForVisuallyImpairedAvailable with value `"true"^^xsd:boolean`.
+
+## Parking Lots
+
+A building has parking lots for people with disablilities if it has either:
+* parkinglots for people with disabilities in front of the building or
+* parkinglots for people with disabilities on site
 
 ## Toilet
 
