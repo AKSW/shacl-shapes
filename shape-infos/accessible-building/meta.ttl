@@ -21,6 +21,6 @@
                      shapes:elevator-partly-accessible-by-wheelchair.ttl ,
                      shapes:entrance-fully-accessible-by-wheelchair.ttl ,
                      shapes:entrance-partly-accessible-by-wheelchair.ttl ,
-                     shapes:special-assistance-for-people.ttl ;
-                     shapes:toilet-fully-accessible-by-wheelchair.ttl ;
+                     shapes:special-assistance-for-people.ttl ,
+                     shapes:toilet-fully-accessible-by-wheelchair.ttl ,
                      shapes:toilet-partly-accessible-by-wheelchair.ttl .
