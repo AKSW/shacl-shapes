@@ -19,7 +19,7 @@
     sh:targetClass build:Building ;
     # relation between building resource and "entrance" resource via build:entrance
     sh:property [
-        sh:path build:toilet ;
+        sh:path build:entrance ;
         sh:minCount 1 ;
         sh:node :EntranceShape
     ] .
