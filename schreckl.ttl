@@ -6,7 +6,7 @@
 # This file contains classes and properties to describe Schreckl meta data about SHACL elements.
 #
 
-:ShapeInfo dc:title "ShapeInfo describes meta information about one or more NodeShape instances."
+:ShapeInfo dc:title "ShapeInfo describes meta information about one or more NodeShape instances." .
 
 :shacl-file rdf:type rdf:Property ;
     dc:comment "Relation to files containing SHACL information."@en .
