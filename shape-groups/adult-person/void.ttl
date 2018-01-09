@@ -9,7 +9,7 @@
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 
-# meta information about accessible building constraints
+# meta information
 
 :AdultPerson
     a void:Dataset ;
