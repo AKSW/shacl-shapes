@@ -1,4 +1,5 @@
 @prefix : <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-building/void.ttl#> .
+@prefix github: <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-building/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -17,7 +18,16 @@
     dcterms:description "SHACL groups to determine if a building is accessible." ;
     dcterms:creator :KonradAbicht ;
     dcterms:source <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-building/void.ttl> ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:imports github:assistance-for-hearing-impaired-people.ttl ,
+                github:assistance-for-visually-impaired-people.ttl ,
+                github:elevator-partly-accessible-by-wheelchair ,
+                github:entrance-fully-accessible-by-wheelchair ,
+                github:entrance-partly-accessible-by-wheelchair ,
+                github:parking-lot-for-people-with-disabilities ,
+                github:special-assistance-for-people ,
+                github:toilet-fully-accessible-by-wheelchair ,
+                github:toilet-partly-accessible-by-wheelchair .
 
 :KonradAbicht a foaf:Person ;
     foaf:homepage <https://github.com/k00ni> .
