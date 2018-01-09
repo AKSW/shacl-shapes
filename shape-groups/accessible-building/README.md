@@ -1,6 +1,6 @@
 # Accessible Buildings
 
-These shapes describe different accessible aspects of buildings. The meta data file is [meta.ttl](https://github.com/schreckl/rules/blob/master/rules/accessible-building/meta.ttl).
+These shapes describe different accessible aspects of buildings. The meta data file is [meta.ttl](https://github.com/AKSW/shacl-shapes/blob/master/shape-groups/accessible-building/meta.ttl).
 
 The following shapes are available:
 
