@@ -16,7 +16,8 @@
     dcterms:title "Adult person" ;
     dcterms:description "Shape to determine if an instance of foaf:Person can be considered an adult." ;
     dcterms:creator :KonradAbicht ;
-    dcterms:source <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/adult-person/void.ttl> .
+    dcterms:source <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/adult-person/void.ttl> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
 
 :KonradAbicht a foaf:Person ;
     foaf:homepage <https://github.com/k00ni> .
