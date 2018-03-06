@@ -13,7 +13,7 @@
     sh:targetClass build:Building ;
     # relation between building resource and "elevator" resource via build:elevator
     sh:property [
-        sh:path buildaccess:elevator ;
+        sh:path build:elevator ;
         sh:minCount 1 ;
         sh:node :ElevatorShape
     ] .
