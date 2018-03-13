@@ -1,0 +1,29 @@
+@prefix :            <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-place/lift-partly-accessible-by-wheelchair.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place-accessibility/ontology.ttl#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+
+# the following constraints describe a place, which has an elevator which is partly accessible by wheelchairs.
+
+# elevator is partly accessible by wheelchairs, if the field suitableForWheelchairs is set to "partly"
+
+:ElevatorPartlyAccessibleByWheelchairShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:place ;
+    # relation between place resource and "elevator" resource via build:elevator
+    sh:property [
+        sh:path build:elevator ;
+        sh:minCount 1 ;
+        sh:node :ElevatorShape
+    ] .
+
+# describes a referenced resource with information about an elevator
+:ElevatorShape
+    a sh:NodeShape ;
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path buildaccess:suitableForWheelchairs ;
+        sh:minCount 1 ;
+        sh:hasValue "partly"
+    ] .

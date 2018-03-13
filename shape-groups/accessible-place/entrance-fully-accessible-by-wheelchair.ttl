@@ -1,0 +1,59 @@
+@prefix :            <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-place/entrance-fully-accessible-by-wheelchair.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place-accessibility/ontology.ttl#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# the following constraints describe a place, which entrance is fully accessible by wheelchairs.
+
+# based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
+# Entrance area completely accessible for wheelchairs, if:
+# - Entrance: flat (max. 3cm) or via ramp <= 6% gradient
+# - Door width: >= 90 cm
+
+:EntranceFullyAccessibleByWheelchairShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:place ;
+    # relation between place resource and "entrance" resource via build:entrance
+    sh:property [
+        sh:path build:entrance ;
+        sh:minCount 1 ;
+        sh:node :EntranceShape
+    ] .
+
+:EntranceShape
+    a sh:NodeShape ;
+    # entrance door width needs to be equal or broader than 90 cm
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path wa:entranceDoorWidth ;
+        sh:minCount 1 ;
+        sh:minInclusive "90"^^xsd:integer
+    ] ;
+    # one of the following conditions has to apply
+    sh:or (
+        # 0 steps till entrance
+        [
+            rdf:type sh:PropertyShape ;
+            sh:path build:numberOfStepsTillEntrance ;
+            sh:maxInclusive "0"^^xsd:integer ;
+            sh:minCount 1
+        ]
+        # step height is equal or lower than 30 cm
+        [
+            rdf:type sh:PropertyShape ;
+            sh:path build:heightOfAStepTillEntrance ;
+            sh:maxInclusive "30"^^xsd:integer ;
+            sh:minCount 1
+        ]
+        # a ramp is available
+        [
+            rdf:type sh:PropertyShape ;
+            sh:path build:rampExisting ;
+            sh:hasValue "ja" ;
+            sh:minCount 1
+        ]
+    ) .

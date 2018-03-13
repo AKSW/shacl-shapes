@@ -1,0 +1,52 @@
+@prefix :            <https://raw.githubusercontent.com/AKSW/shacl-shapes/master/shape-groups/accessible-place/entrance-partly-accessible-by-wheelchair.ttl#> .
+@prefix build:       <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place/ontology.ttl#> .
+@prefix buildaccess: <https://github.com/AKSW/leds-asp-f-ontologies/raw/master/ontologies/place-accessibility/ontology.ttl#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix wa:          <http://semweb.mmlab.be/ns/wa#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# the following constraints describe a place, which entrance is partly accessible by wheelchairs.
+
+# based on the mini-specification of the Behindertenverband Leipzig e.V.: http://www.le-online.de/zeichenengl.htm
+# Entrance area with limited accessibility for wheelchairs, if:
+# - max. 1 step or via ramp with max. 12% gradient or
+# - Door width: >= 70 cm
+
+:EntrancePartlyAccessibleByWheelchairShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass build:place ;
+    # relation between place resource and "entrance" resource via build:entrance
+    sh:property [
+        sh:path build:entrance ;
+        sh:minCount 1 ;
+        sh:node :EntranceShape
+    ] .
+
+:EntranceShape
+    a sh:NodeShape ;
+    # entrance door width needs to be equal or broader than 70 cm
+    sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path wa:entranceDoorWidth ;
+        sh:minCount 1 ;
+        sh:minInclusive "70"^^xsd:integer
+    ] ;
+    # one of the following conditions has to apply
+    sh:or (
+        # max 1 step till entrance
+        [
+            rdf:type sh:PropertyShape ;
+            sh:path build:numberOfStepsTillEntrance ;
+            sh:maxInclusive "1"^^xsd:integer ;
+            sh:minCount 1
+        ]
+        # a ramp is available
+        [
+            rdf:type sh:PropertyShape ;
+            sh:path build:rampExisting ;
+            sh:hasValue "ja" ;
+            sh:minCount 1
+        ]
+    ) .
