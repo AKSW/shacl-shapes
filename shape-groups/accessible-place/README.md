@@ -1,6 +1,6 @@
 # Accessible places
 
-These shapes describe different accessible aspects of places. The meta data file is [meta.ttl](https://github.com/AKSW/shacl-shapes/blob/master/shape-groups/accessible-place/meta.ttl).
+These shapes describe different accessible aspects of places. The meta data file is [void.ttl](https://github.com/AKSW/shacl-shapes/blob/master/shape-groups/accessible-place/void.ttl).
 
 The following shapes are available:
 
