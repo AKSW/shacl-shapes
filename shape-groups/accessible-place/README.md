@@ -49,7 +49,7 @@ Elevator is partly accessible by wheelchairs, if
   * width: >= 110 cm
 * Height of controls inside and out: between 70 - 115 cm
 
-The field `place:suitableForWheelchairs` should be set to "partly" if the elevator is partly accessible by wheelchairs.
+The field `place:elevatorSuitableForWheelchairs` should be set to "partly" if the elevator is partly accessible by wheelchairs.
 
 ## Local Support
 
