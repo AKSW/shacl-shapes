@@ -42,7 +42,14 @@ Also based on the mini-specification of the [Behindertenverband Leipzig e.V.](ht
 
 ## Elevator
 
-Elevator is partly accessible by wheelchairs, if the field place:suitableForWheelchairs is set to "partly". It is aggregated
+Elevator is partly accessible by wheelchairs, if
+* Door width:	>= 90 cm
+* cabine: 
+  * length: >= 140 cm
+  * width: >= 110 cm
+* Height of controls inside and out: between 70 - 115 cm
+
+The field `place:suitableForWheelchairs` should be set to "partly" if the elevator is partly accessible by wheelchairs.
 
 ## Local Support
 
